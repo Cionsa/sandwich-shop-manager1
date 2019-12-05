@@ -30,7 +30,7 @@ public class TakeAwayManagerTest{
 
 
     @Test
-    public void Discount50PerCentLessExpensivePaninoWith5PlusPaninoOrder_Test() throws TakeAwayBillException() throws TakeAwayBillException{
+    public void Discount50PerCentLessExpensivePaninoWith5PlusPaninoOrder_Test() throws TakeAwayBillException{
         List<MenuItem> itemsOrdered = new ArrayList<MenuItem>();
         TakeAwayManager testBill = new TakeAwayManager();
 

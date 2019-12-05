@@ -23,9 +23,9 @@ public class TakeAwayManager implements TakeAwayBill{
             else {
                 totalFood += menuItem.getPrice();
             }
-            if(menuItem.getType() == MenuItem.items.Panino){
+            if(menuItem.getType() == MenuItem.items.Panino) {
                 nrPanini++;
-                if(paninoLessExpensive > menuItem.getPrice()){
+                if(paninoLessExpensive > menuItem.getPrice()) {
                     paninoLessExpensive = menuItem.getPrice();
                 }
             }
