@@ -30,7 +30,7 @@ public class TakeAwayManagerTest{
 
 
     @Test
-    public void HalfDiscountLessExpensivePaninoWith5PlusPaninoOrder_Test() throws TakeAwayBillException{
+    public void Discount50PerCentLessExpensivePaninoWith5PlusPaninoOrder_Test() throws TakeAwayBillException() throws TakeAwayBillException{
         List<MenuItem> itemsOrdered = new ArrayList<MenuItem>();
         TakeAwayManager testBill = new TakeAwayManager();
 
@@ -47,6 +47,28 @@ public class TakeAwayManagerTest{
 
         try {
             assertEquals(30.25, testBill.getOrderPrice(itemsOrdered), 0.0);
+        } 
+        catch (TakeAwayBillException exc){
+            exc.getMessage();
+        }
+    }
+
+     
+    
+    @Test
+    public void Discount10PercentWith50PlusEuroOrder_Test() throws TakeAwayBillException {
+        List<MenuItem> itemsOrdered = new ArrayList<MenuItem>();
+        TakeAwayManager testBill = new TakeAwayManager();
+
+        for(int i = 1; i <= 10; i++)
+            itemsOrdered.add(new MenuItem("Panino primavera", MenuItem.items.Panino, 4.00));
+
+        itemsOrdered.add(new MenuItem("Coca cola" , MenuItem.items.Bevanda, 1.50));
+        itemsOrdered.add(new MenuItem("Panino vegetariano", MenuItem.items.Panino, 3.50));
+        itemsOrdered.add(new MenuItem("Hot dog" , MenuItem.items.Panino, 4.00));
+        itemsOrdered.add(new MenuItem("Olive ascolane" , MenuItem.items.Fritto, 3.00));
+        try {
+            assertEquals(50.25, testBill.getOrderPrice(itemsOrdered), 0.0);
         } 
         catch (TakeAwayBillException exc){
             exc.getMessage();
