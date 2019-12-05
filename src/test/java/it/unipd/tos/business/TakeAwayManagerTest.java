@@ -30,7 +30,6 @@ public class TakeAwayManagerTest{
         }
     }
 
-
     @Test
     public void Discount50PerCentLessExpensivePaninoWith5PlusPaninoOrder_Test() throws TakeAwayBillException{
         List<MenuItem> itemsOrdered = new ArrayList<MenuItem>();
@@ -55,8 +54,6 @@ public class TakeAwayManagerTest{
         }
     }
 
-     
-    
     @Test
     public void Discount10PercentWith50PlusEuroOrder_Test() throws TakeAwayBillException {
         List<MenuItem> itemsOrdered = new ArrayList<MenuItem>();
@@ -76,7 +73,7 @@ public class TakeAwayManagerTest{
             exc.getMessage();
         }
     }
-
+    
     @Rule
     public ExpectedException thrown = ExpectedException.none();
 
