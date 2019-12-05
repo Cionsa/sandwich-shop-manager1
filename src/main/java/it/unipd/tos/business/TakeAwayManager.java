@@ -14,6 +14,7 @@ public class TakeAwayManager implements TakeAwayBill{
         double totalFood = 0.0;
         double totalDrink = 0.0;
         int nrPanini = 0;
+	double commisione = 0.5;
         double paninoLessExpensive = Double.MAX_VALUE;
 
         for (MenuItem menuItem : itemsOrdered) {
@@ -41,6 +42,12 @@ public class TakeAwayManager implements TakeAwayBill{
         if(totalFood > 50.0){
             totalFood -= (totalFood*0.1);
         }
-        return totalDrink +totalFood;
+        if(totalDrink + totalFood < 10.0) {
+            return totalDrink + totalFood + commisione;    
+        }
+        else {
+            return totalDrink + totalFood;
+        }
+
     }
 } 
